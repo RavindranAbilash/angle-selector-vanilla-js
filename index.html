@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angle Selector</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Angle Selector</h2>
+
+        <!-- Text Box -->
+        <div class="input-group">
+            <label for="angleInput">Angle:</label>
+            <input type="number" id="angleInput" min="0" max="360" value="0">
+        </div>
+
+        <!-- Slider -->
+        <div class="input-group">
+            <input type="range" id="angleSlider" min="-180" max="180" value="0">
+        </div>
+
+        <!-- Radio Buttons -->
+        <div class="input-group">
+            <label>Common Angles:</label>
+            <label><input type="radio" name="commonAngle" value="0"> 0°</label>
+            <label><input type="radio" name="commonAngle" value="45"> 45°</label>
+            <label><input type="radio" name="commonAngle" value="60"> 60°</label>
+            <label><input type="radio" name="commonAngle" value="90"> 90°</label>
+            <label><input type="radio" name="commonAngle" value="180"> 180°</label>
+        </div>
+
+        <!-- SVG Pie Chart -->
+        <div class="pie-chart-container">
+            <svg width="120" height="120" viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="50" fill="#ddd" />
+                <path id="pieSlice" fill="#4CAF50" />
+                <circle cx="50" cy="50" r="45" fill="white" />
+                <text x="50" y="55" font-size="14" text-anchor="middle" fill="#333" id="angleText">0°</text>
+            </svg>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
