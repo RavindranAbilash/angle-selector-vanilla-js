@@ -22,6 +22,13 @@ document.addEventListener('DOMContentLoaded', function () {
         angleInput.value = angle;
         angleSlider.value = angle - 180;
         updatePieChart(angle);
+        updateRadioButtons(angle);
+    };
+
+    const updateRadioButtons = (angle) => {
+        commonAngleRadios.forEach(radio => {
+            radio.checked = parseInt(radio.value, 10) === angle;
+        });
     };
 
     // Handle text input change
@@ -43,7 +50,9 @@ document.addEventListener('DOMContentLoaded', function () {
     // Handle radio button change
     commonAngleRadios.forEach(radio => {
         radio.addEventListener('change', (event) => {
-            syncComponents(parseInt(event.target.value, 10));
+            if (event.target.checked) {
+                syncComponents(parseInt(event.target.value, 10));
+            }
         });
     });
 
